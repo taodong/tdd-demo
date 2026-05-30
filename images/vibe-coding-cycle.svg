@@ -1,0 +1,88 @@
+<svg width="680" height="620" viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Vibe coding development cycle</title>
+  <desc>A flowchart showing the vibe coding development cycle. An outer loop shows human design leading into an inner iteration loop of agent implement, human verify and feedback, and agent implement again. After the inner loop, a regression phase begins where the human runs regression and submits bugs, then the agent implements fixes, completing the outer loop.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #1a1a1a; }
+      .th  { font-size: 14px; font-weight: 600; }
+      .ts  { font-size: 12px; font-weight: 400; fill: #555; }
+      .arr { stroke: #888; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="620" fill="#ffffff"/>
+
+  <!-- ── Legend ── -->
+  <rect x="40" y="22" width="12" height="12" rx="2" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="ts" x="58" y="33">Human</text>
+  <rect x="120" y="22" width="12" height="12" rx="2" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+  <text class="ts" x="138" y="33">Agent</text>
+
+  <!-- ── OUTER LOOP label ── -->
+  <text class="ts" x="340" y="68" text-anchor="middle" fill="#aaa">outer loop</text>
+
+  <!-- ── Phase 1: Human design ── -->
+  <rect x="240" y="80" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="340" y="104" text-anchor="middle" dominant-baseline="central">Human</text>
+  <text class="ts" x="340" y="122" text-anchor="middle" dominant-baseline="central">Design and define feature</text>
+
+  <!-- arrow down to inner loop -->
+  <line x1="340" y1="136" x2="340" y2="168" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ── INNER LOOP box ── -->
+  <rect x="60" y="168" width="560" height="240" rx="12" fill="none" stroke="#bbb" stroke-width="0.5" stroke-dasharray="5 3"/>
+  <text class="ts" x="100" y="188" fill="#aaa">iteration loop</text>
+
+  <!-- ── Phase 2: Agent implement (first) ── -->
+  <rect x="240" y="196" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text class="th" x="340" y="220" text-anchor="middle" dominant-baseline="central">Agent</text>
+  <text class="ts" x="340" y="238" text-anchor="middle" dominant-baseline="central">Implement feature</text>
+
+  <!-- arrow down -->
+  <line x1="340" y1="252" x2="340" y2="284" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ── Phase 3: Human verify ── -->
+  <rect x="240" y="284" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="340" y="308" text-anchor="middle" dominant-baseline="central">Human</text>
+  <text class="ts" x="340" y="326" text-anchor="middle" dominant-baseline="central">Verify and give feedback</text>
+
+  <!-- arrow down -->
+  <line x1="340" y1="340" x2="340" y2="372" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ── Phase 4: Agent implement (iterate) ── -->
+  <rect x="240" y="372" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text class="th" x="340" y="396" text-anchor="middle" dominant-baseline="central">Agent</text>
+  <text class="ts" x="340" y="414" text-anchor="middle" dominant-baseline="central">Implement feedback</text>
+
+  <!-- feedback loop arrow: left side, back up to human verify -->
+  <path d="M240 400 L140 400 L140 312 L240 312" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text class="ts" x="100" y="362" text-anchor="middle">iterate</text>
+
+  <!-- exit inner loop arrow down -->
+  <line x1="340" y1="428" x2="340" y2="460" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text class="ts" x="368" y="448" fill="#aaa">satisfied</text>
+
+  <!-- ── Phase 5: Human regression ── -->
+  <rect x="220" y="460" width="240" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="340" y="484" text-anchor="middle" dominant-baseline="central">Human</text>
+  <text class="ts" x="340" y="502" text-anchor="middle" dominant-baseline="central">Run regression, submit bugs</text>
+
+  <!-- arrow down -->
+  <line x1="340" y1="516" x2="340" y2="548" stroke="#888" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ── Phase 6: Agent fix ── -->
+  <rect x="240" y="548" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text class="th" x="340" y="572" text-anchor="middle" dominant-baseline="central">Agent</text>
+  <text class="ts" x="340" y="590" text-anchor="middle" dominant-baseline="central">Implement bug fixes</text>
+
+  <!-- outer loop back arrow: right side, back up to human design -->
+  <path d="M440 576 L560 576 L560 108 L440 108" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <text class="ts" x="596" y="338" text-anchor="middle">new</text>
+  <text class="ts" x="596" y="353" text-anchor="middle">cycle</text>
+
+</svg>
