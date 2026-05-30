@@ -1,0 +1,1 @@
+All automation outputs are in this folder
